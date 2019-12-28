@@ -150,6 +150,29 @@ Transform:
   m_Father: {fileID: 2077382591}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &255469111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4036321612202840814, guid: d5c5792a99ad207c39fae17c38bf299e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1676464708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &255469112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255469111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!4 &294849701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9038849937695920389, guid: d5c5792a99ad207c39fae17c38bf299e,
@@ -167,6 +190,7 @@ GameObject:
   - component: {fileID: 302078841}
   - component: {fileID: 302078840}
   - component: {fileID: 302078839}
+  - component: {fileID: 302078842}
   m_Layer: 0
   m_Name: GameEnding
   m_TagString: Untagged
@@ -188,11 +212,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 1
   displayImageDuration: 1
-  player: {fileID: 1470694225}
-  exitBackgroundImageCanvasGroup: {fileID: 2110142316}
-  caughtBackgroundImageCanvasGroup: {fileID: 1652124430}
-  exitAudio: {fileID: 1685992958}
-  caughtAudio: {fileID: 1095232282}
+  gameEndOption: 1
+  endBackgroundImageCanvasGroup: {fileID: 2110142316}
+  endAudio: {fileID: 1685992958}
 --- !u!65 &302078840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -220,6 +242,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &302078842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302078838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78fe886002ac15a2a406cf98c4765b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1470694230}
+  checkLineOfSight: 0
 --- !u!1 &338047681
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +444,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &440812674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4036321612202840814, guid: d5c5792a99ad207c39fae17c38bf299e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8255747884591559194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &440812675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440812674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!1 &600776595
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,12 +515,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &608675935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4609376342307002740, guid: 366556e52c49b2e5d81d765dc5f60aa5,
+    type: 3}
+  m_PrefabInstance: {fileID: 705786522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &608675936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608675935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!4 &610144646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440084398335303915, guid: 366556e52c49b2e5d81d765dc5f60aa5,
     type: 3}
   m_PrefabInstance: {fileID: 705786522}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &611044486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4609376342307002740, guid: 366556e52c49b2e5d81d765dc5f60aa5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1679570665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &611044487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611044486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!1001 &637235220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1170,6 +1275,29 @@ Transform:
   m_Father: {fileID: 1315844602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1016546530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4609376342307002740, guid: 366556e52c49b2e5d81d765dc5f60aa5,
+    type: 3}
+  m_PrefabInstance: {fileID: 637235220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1016546531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016546530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!1 &1060364139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1552,29 @@ Transform:
   m_Father: {fileID: 2077382591}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1239355126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4609376342307002740, guid: 366556e52c49b2e5d81d765dc5f60aa5,
+    type: 3}
+  m_PrefabInstance: {fileID: 9179851432836109446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1239355127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239355126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!1 &1287321729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,12 +1644,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2103696677}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1470694225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3643445599836451242, guid: 7640b529c9dccc3319f40ca3580d6b1a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3643445600611273319}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1470694230 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3643445599836155274, guid: 7640b529c9dccc3319f40ca3580d6b1a,
@@ -1564,6 +1709,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1600772815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4036321612202840814, guid: d5c5792a99ad207c39fae17c38bf299e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2103696677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1600772816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600772815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af51310848ea288147b80b310eb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDuration: 1
+  gameEndOption: 0
+  endBackgroundImageCanvasGroup: {fileID: 1652124430}
+  endAudio: {fileID: 1095232282}
 --- !u!1001 &1609356133
 PrefabInstance:
   m_ObjectHideFlags: 0
