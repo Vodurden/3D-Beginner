@@ -1,31 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour {
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
+    public CanvasGroup caughtBackgroundImageCanvasGroup;
 
-    bool isEndingGame = false;
+    bool hasWonGame = false;
+    bool hasLostGame = false;
     float fadeTimer = 0f;
 
-    void Update() {
-        if(isEndingGame) {
-            fadeTimer += Time.deltaTime;
-            exitBackgroundImageCanvasGroup.alpha = fadeTimer / fadeDuration;
+    public void CaughtPlayer() {
+        hasLostGame = true;
+    }
 
-            // Quit the game when we're done fading
-            if(fadeTimer > fadeDuration + displayImageDuration) {
-                Application.Quit();
-            }
+    void Update() {
+        if(hasWonGame) {
+            EndLevel(exitBackgroundImageCanvasGroup, false);
+        } else if(hasLostGame) {
+            EndLevel(caughtBackgroundImageCanvasGroup, true);
         }
     }
 
     void OnTriggerEnter(Collider other) {
         if(other.gameObject == player) {
-            isEndingGame = true;
+            hasWonGame = true;
+        }
+    }
+
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart) {
+        fadeTimer += Time.deltaTime;
+        imageCanvasGroup.alpha = fadeTimer / fadeDuration;
+
+        // Quit the game when we're done fading
+        if(fadeTimer > fadeDuration + displayImageDuration) {
+            if(doRestart) {
+                SceneManager.LoadScene(0);
+            } else {
+                Application.Quit();
+            }
         }
     }
 }
