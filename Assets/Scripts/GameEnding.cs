@@ -9,10 +9,13 @@ public class GameEnding : MonoBehaviour {
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
+    public AudioSource exitAudio;
+    public AudioSource caughtAudio;
 
     bool hasWonGame = false;
     bool hasLostGame = false;
     float fadeTimer = 0f;
+    bool hasAudioPlayed = false;
 
     public void CaughtPlayer() {
         hasLostGame = true;
@@ -20,9 +23,9 @@ public class GameEnding : MonoBehaviour {
 
     void Update() {
         if(hasWonGame) {
-            EndLevel(exitBackgroundImageCanvasGroup, false);
+            EndLevel(exitBackgroundImageCanvasGroup, exitAudio, false);
         } else if(hasLostGame) {
-            EndLevel(caughtBackgroundImageCanvasGroup, true);
+            EndLevel(caughtBackgroundImageCanvasGroup, caughtAudio, true);
         }
     }
 
@@ -32,9 +35,14 @@ public class GameEnding : MonoBehaviour {
         }
     }
 
-    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart) {
+    void EndLevel(CanvasGroup imageCanvasGroup, AudioSource audioSource, bool doRestart) {
         fadeTimer += Time.deltaTime;
         imageCanvasGroup.alpha = fadeTimer / fadeDuration;
+
+        if(!hasAudioPlayed) {
+            audioSource.Play();
+            hasAudioPlayed = true;
+        }
 
         // Quit the game when we're done fading
         if(fadeTimer > fadeDuration + displayImageDuration) {
